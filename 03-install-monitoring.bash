@@ -1,10 +1,5 @@
 #!/bin/bash
 
-# Server มี resource น้อยเลยไม่ลง monitoring
-exit 0
-
-
-
 # Run this after app install on ArgoCD
 
 cd 03-monitoring

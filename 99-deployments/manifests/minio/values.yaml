@@ -1,5 +1,5 @@
-domain1: storage-console.sgdwallets.com
-domain2: storage-api.sgdwallets.com
+domain1: storage-console.fcqqp2p.com
+domain2: storage-api.fcqqp2p.com
 
 minio:
   enabled: true
@@ -47,5 +47,5 @@ minio:
       purge: false
 
   environment:
-    MINIO_SERVER_URL: https://storage-api.sgdwallets.com
-    MINIO_BROWSER_REDIRECT_URL: https://storage-console.sgdwallets.com
+    MINIO_SERVER_URL: https://storage-api.fcqqp2p.com
+    MINIO_BROWSER_REDIRECT_URL: https://storage-console.fcqqp2p.com

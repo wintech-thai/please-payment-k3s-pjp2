@@ -3,4 +3,4 @@ kind: ConfigMap
 metadata:
   name: storage-config
 data:
-  MINIO_ENDPOINT_CUSTOM: "https://storage-api.sgdwallets.com"
+  MINIO_ENDPOINT_CUSTOM: "https://storage-api.fcqqp2p.com"

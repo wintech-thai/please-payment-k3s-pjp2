@@ -1,0 +1,51 @@
+domain1: storage-console.sgdwallets.com
+domain2: storage-api.sgdwallets.com
+
+minio:
+  enabled: true
+  existingSecret: minio-secret
+  mode: standalone
+
+  persistence:
+    enabled: true
+    size: 30Gi
+    accessMode: ReadWriteOnce
+
+  resources:
+    requests:
+      cpu: 250m
+      memory: 512Mi
+    limits:
+      cpu: 2
+      memory: 2Gi
+
+  service:
+    type: ClusterIP
+    port: 9000
+
+  consoleService:
+    type: ClusterIP
+    port: 9001
+
+  securityContext:
+    enabled: true
+    runAsNonRoot: true
+    runAsUser: 1000
+    runAsGroup: 1000
+    fsGroup: 1000
+
+  podSecurityContext:
+    fsGroup: 1000
+
+  buckets:
+    - name: uploads-dev
+      policy: none
+      purge: false
+
+    - name: uploads-prod
+      policy: none
+      purge: false
+
+  environment:
+    MINIO_SERVER_URL: https://storage-api.sgdwallets.com
+    MINIO_BROWSER_REDIRECT_URL: https://storage-console.sgdwallets.com

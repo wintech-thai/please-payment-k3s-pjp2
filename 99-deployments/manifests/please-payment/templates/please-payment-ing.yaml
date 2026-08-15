@@ -47,6 +47,33 @@ spec:
                 port:
                   number: 80
 ---
+# สำหรับ API documents
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: custom-admin-docs
+  annotations:
+    nginx.ingress.kubernetes.io/backend-protocol: HTTP
+    nginx.ingress.kubernetes.io/proxy-body-size: 50m
+    nginx.org/client-max-body-size: 50m
+spec:
+  ingressClassName: nginx
+  tls:
+    - hosts:
+      - {{ .Values.domain4 }}
+      secretName: admin-doc-cert
+  rules:
+    - host: {{ .Values.domain4 }}
+      http:
+        paths:
+          - path: /documents
+            pathType: Prefix
+            backend:
+              service:
+                name: please-payment-prod-admin
+                port:
+                  number: 80
+---
 apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:

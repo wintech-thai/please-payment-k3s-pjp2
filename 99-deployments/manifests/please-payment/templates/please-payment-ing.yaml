@@ -17,7 +17,7 @@ spec:
             pathType: Prefix
             backend:
               service:
-                name: please-payment-prod-admin
+                name: please-payment-prod-admin-xxxxxx #ปิดตรงนี้ไว้เพราะเวลาโดนยิงมั่ว ๆ มามันจะมาที่นี่ก่อน
                 port:
                   number: 80
 ---
